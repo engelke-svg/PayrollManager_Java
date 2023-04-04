@@ -1,0 +1,42 @@
+			ABC Company
+	Name: Tom SawyerEmployee ID: 1000
+	Pay Date 	 04/03/2023
+	Net Salary $65000.0
+	Gross Salary $45500.0
+
+
+			ABC Company
+	Name: Jan WhiteEmployee ID: 1001
+	Pay Date 	 04/03/2023
+	Net Salary $57000.0
+	Gross Salary $39900.0
+
+
+			ABC Company
+	Name: Joe BrownEmployee ID: 1002
+	Pay Date 	 04/03/2023
+	Net Salary $50000.0
+	Gross Salary $35000.0
+
+
+			ABC Company
+	Name: Tom SawyerEmployee ID: 1000
+	Pay Date 	 04/03/2023
+	Gross Salary $65000.0
+	Net Salary $45500.0
+
+
+			ABC Company
+	Name: Jan WhiteEmployee ID: 1001
+	Pay Date 	 04/03/2023
+	Gross Salary $57000.0
+	Net Salary $39900.0
+
+
+			ABC Company
+	Name: Joe BrownEmployee ID: 1002
+	Pay Date 	 04/03/2023
+	Gross Salary $50000.0
+	Net Salary $35000.0
+
+
