@@ -1,32 +1,62 @@
 package simple.hr;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-/*
-        SalariedEmployee empl1= new SalariedEmployee("Tom Sawyer", 65000);
-        HourlyEmployee empl2= new HourlyEmployee("Jane White", 35);
-        Contractor contractor1 = new Contractor("Joe's Plumbing", 5, 335.67);
 
-        System.out.println(empl1.calcualtePay());
-        System.out.println(empl2.calcualtePay());
-        System.out.println();
- */
+        // department objects
+        Department dept1 = new Department("Accounting");
+        Department dept2 = new Department("IT");
+        Department dept3 = new Department("Sales");
 
-        SalariedEmployee empl1= new SalariedEmployee("Tom Sawyer", 65000);
-        SalariedEmployee empl2= new SalariedEmployee("Jan White", 57000);
-        SalariedEmployee empl3= new SalariedEmployee("Joe Brown", 50000);
+        // added department to a list
+        List<Department> departments = new ArrayList<>();
+        departments.add(dept1);
+        departments.add(dept2);
+        departments.add(dept3);
 
-        String fileName = "Paystubs.txt";
+        // address objects
+        Address address = new Address("5 Emerald close", "Kintston", "Kingston", "00000");
 
-        List<SalariedEmployee> employees = new ArrayList<>();
-        employees.add(empl1);
-        employees.add(empl2);
-        employees.add(empl3);
+        // company object
+        Company abc = new Company("ABC Company", address, departments);
 
-        SalariedEmployee.printStub(fileName, employees);
+        // salaried employees
+        SalariedEmployee empl1= new SalariedEmployee("Tom Sawyer", 65000, dept1);
+        SalariedEmployee empl2= new SalariedEmployee("Jan White", 57000, dept2);
+        SalariedEmployee empl3= new SalariedEmployee("Joe Brown", 50000, dept3);
+        SalariedEmployee empl4= new SalariedEmployee("Sarah Thomas", 50000, dept3);
+        SalariedEmployee empl5= new SalariedEmployee("Alex Eucker", 40000, dept2);
+
+
+        // array to store employees
+        Employee[] employees = {empl1, empl2, empl3, empl4, empl5};
+
+        // print employee info
+        List<Employee>  employeeList = Arrays.asList(employees);
+
+        // print stream
+        employeeList.stream().forEach(System.out::println);
+
+        // group employees by department
+        System.out.println("employees grouped by department");
+        Map<String, List<Employee>> groupedByDepartment =
+                employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+        groupedByDepartment.forEach(
+                (department, employeesInDepartment) ->
+                {
+                    System.out.println(department);
+                    employeesInDepartment.forEach(
+                            employee -> System.out.printf("   %s%n", employee)
+                    );
+                }
+        );
+
 
 
     }
